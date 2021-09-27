@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
+    path('account/', include('account.urls', namespace='account')),
+    path('index/', include('game.urls', namespace='game')),
+    path('chat/', include('chat.urls', namespace='chat')),
 ]
