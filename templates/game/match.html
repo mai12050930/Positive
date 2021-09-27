@@ -1,0 +1,24 @@
+<!-- {% load staticfiles %} -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Select room</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <image src="#" alt="ゲームロゴ" />
+    <h1>Match</h1>
+
+    <!-- ルーム番号入力フォーム -->
+    <form name="form_room" method="post" action="#">
+        <label for="room_number">Room number</label>
+        <input type="number" id="room_number" name="room_number">
+        <input type="submit" value="Enter">
+    </form>
+    <h1>Log</h1>
+</body>
+
+</html>
