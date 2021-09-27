@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     "game",
     "account",
     "chat",
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,3 +129,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+#djanngo-allauthの設定
+"""
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '' #ログイン後に遷移するurlの指定
+ACCOUNT_LOGOUT_REDIRECT_URL = '' #ログアウト後に遷移するurlの指定
+ 
+EMAIL_HOST = 'smtp.gmail.com' #メールサーバの指定
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+"""
