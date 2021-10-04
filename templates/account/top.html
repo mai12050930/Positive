@@ -5,13 +5,19 @@
 <head>
     <title>login</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!--
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+        デザインのため、いったんコメントアウトしてます。
+    -->
+    <link rel="stylesheet" href="../../static/css/style.css">
+    
 </head>
 
 <body>
+    <p><image src="../game.png" alt="ゲームロゴ" /></p>
     <h1>Signin</h1>
-
-    <image src="#" alt="ゲームロゴ" />
     
     <!--ログインフォーム-->
     <form name="login_form" method="post" action="{% 'top' %}">
