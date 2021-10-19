@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "game",
-    "account",
+    "normal_account",
     "chat",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -77,6 +77,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+
+}
+"""
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
@@ -86,6 +90,7 @@ DATABASES = {
         'PORT': 3306,
     }
 }
+"""
 
 
 # Password validation

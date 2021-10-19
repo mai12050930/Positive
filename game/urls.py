@@ -1,11 +1,9 @@
 from django.urls import path
 from . import views
-
-app_name = 'game'
  
 urlpatterns = [
-    #path(views.choice, name='choice'),
-    #path(views.clear, name='clear'),
-    #path(views.home, name='home'),
-    #path(views.room, name='room'),
+    path(r"top/choice/", views.choice, name='choice'),
+    path(r"home/clear/", views.clear, name='clear'),
+    path(r"home/", views.home, name='home'),
+    path(r"home/match/", views.match, name='match'),
 ]
