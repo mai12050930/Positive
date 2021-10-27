@@ -1,16 +1,9 @@
-<!-- {% load staticfiles %} -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>login</title>
     <meta charset="utf-8">
-
-    <!--
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
-        デザインのため、いったんコメントアウトしてます。
-    -->
     <link rel="stylesheet" href="../../static/css/style.css">
     
 </head>
@@ -20,7 +13,7 @@
     <h1>Signin</h1>
     
     <!--ログインフォーム-->
-    <form name="login_form" method="post" action="{% 'top' %}">
+    <form name="login_form" method="post">
             <!-- {% csrf_token %} -->
             <div>
                 <label for="username">username</label>
@@ -37,7 +30,7 @@
     </form>
 
     <!-- 新規登録画面へ -->
-    <p><a href="{% url'account' %}">Signup</a></p>
+    <p>Signup</a></p>
 </body>
 
 </html>

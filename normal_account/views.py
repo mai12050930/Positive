@@ -1,9 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
-def account(request):
-    return HttpResponse("Hello, world.")
+def display_account(request):
+    return render(request, 'normal_account/account.html')
 
-def top(request):
-    return HttpResponse("Hello, world.")
-
+def display_top(request):
+    return render(request, 'normal_account/top.html')

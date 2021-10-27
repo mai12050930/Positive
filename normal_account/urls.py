@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
- 
+
 urlpatterns = [
-    path(r"", views.account, name='account'),
-    path(r"top/", views.top, name='top'),
+    path('', views.display_top, name='top'),
+    path('account/', views.display_account, name='account')
 ]

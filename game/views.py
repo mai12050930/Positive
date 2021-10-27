@@ -1,17 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
-def choice(request):
-    return HttpResponse("Hello, world.")
+def display_choice(request):
+    return render(request, 'game/choice.html')
 
-def clear(request):
-    return HttpResponse("Hello, world.")
+def display_clear(request):
+    return render(request, 'game/clear.html')
 
-def home(request):
-    return HttpResponse("Hello, world.")
+def display_home(request):
+    return render(request, 'game/home.html')
 
-def match(request):
-    return HttpResponse("Hello, world.")
-
-
-
+def display_match(request):
+    return render(request, 'game/match.html')
