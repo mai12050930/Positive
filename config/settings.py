@@ -32,12 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "game",
-    "account",
+    "normal_account",
     "chat",
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -61,7 +57,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #templatesをプロジェクトの直下に配置
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +77,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+
+}
+"""
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
@@ -90,6 +90,7 @@ DATABASES = {
         'PORT': 3306,
     }
 }
+"""
 
 
 # Password validation
@@ -127,6 +128,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 STATIC_URL = '/static/'
 
