@@ -1,17 +1,9 @@
-<!-- {% load staticfiles %} -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Chat</title>
     <meta charset="utf-8">
-    
-
-    <!--
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
-        デザインのため、いったんコメントアウトしてます。
-    -->
     <link rel="stylesheet" href="../../static/css/style.css">
     <script src="../../static/js/style.js"></script>
 </head>
@@ -24,7 +16,6 @@
 
     <!-- 送信フォーム -->
     <form name="chat_send" action="post" action="#">
-        <!-- {% csrf_token %} -->
         <div>
             <input type="text" name="text" id="text" />
             <input type="submit" value="Send">
