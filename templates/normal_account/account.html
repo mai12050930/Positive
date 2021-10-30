@@ -17,7 +17,7 @@
     
 
     <!-- 新規登録フォーム -->
-    <form  name="signup_form" action="{% url 'account' %}" methon="post">
+    <form  name="signup_form" action="{% url 'signup' %}" methon="post">
         {% csrf_token %}
         <div>
             <label for="username">username</label>

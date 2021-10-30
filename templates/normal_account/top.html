@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>login</title>
+    <title>Signin</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="../../static/js/style.js"></script>
 
     
@@ -19,7 +20,7 @@
     
     <!--ログインフォーム-->
     <form name="login_form" method="post">
-            <!-- {% csrf_token %} -->
+            {% csrf_token %}
             <div>
                 <label for="username">username</label>
                 <input type="text" id="username" name="username" />
@@ -34,39 +35,6 @@
 
     </form>
 
-    <!--cssアニメーションにおけるテスト-->
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    <a>tesuto</a><br>
-    
-    <!--cssアニメーションにおけるテスト-->
-
     <p id="topbutton">
         <a href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">▲TOPへ戻る</a>
      </p>
@@ -74,7 +42,7 @@
     
 
     <!-- 新規登録画面へ -->
-    <p>Signup</a></p>
+    <a href="{% url 'signup' %}">Signup</a>
 
     
 </body>
