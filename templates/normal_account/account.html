@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Signup</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="../../static/js/style.js"></script>
 
 </head>
@@ -17,7 +18,7 @@
 
     <!-- 新規登録フォーム -->
     <form  name="signup_form" action="{% url 'account' %}" methon="post">
-        <!-- {% csrf_token %} -->
+        {% csrf_token %}
         <div>
             <label for="username">username</label>
             <input type="text" id="username" name="username" />
@@ -33,7 +34,7 @@
             <input type="password" id="re_password" name="re_password">
         </div>
         <br>
-        <input type="submit" value="create"></a>
+        <input type="submit" value="create">
     </form>
 </body>
 
