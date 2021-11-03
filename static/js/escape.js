@@ -121,28 +121,28 @@ function draw() {
         if(view == 1) {
             img.src = "../../static/images/view1.png";
             img.onload = function() {
-                context.drawImage(img, 0, 0);
+                context.drawImage(img, 0, 0, 600, 450);
                 moveBt();
                 itemBar();
             }
         }else if(view == 2) {
-            img.src = "../images/view2.png";
+            img.src = "../../static/images/view1.png";
             img.onload = function() {
-                context.drawImage(img, 0, 0);
+                context.drawImage(img, 0, 0, 600, 450);
                 moveBt();
                 itemBar();
             }
         }else if(view == 3) {
-            img.src = "../images/view2.png";
+            img.src = "../../static/images/view2.png";
             img.onload = function() {
-                context.drawImage(img, 0, 0);
+                context.drawImage(img, 0, 0, 600, 450);
                 moveBt();
                 itemBar();
             }
         }else if(view == 4) {
-            img.src = "../images/view2.png";
+            img.src = "../../static/images/view1.png";
             img.onload = function() {
-                context.drawImage(img, 0, 0);
+                context.drawImage(img, 0, 0, 650, 400);
                 moveBt();
                 itemBar();
             }

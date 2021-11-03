@@ -23,6 +23,11 @@ form {
     padding-top: 100px;
 }
 
+canvas {
+    margin: 0px auto 0px auto;
+    border: 1px solid #000000;
+}
+
 #topbutton {
     /* ▼ボタンの表示位置を画面の右下に固定 */
     position: fixed; /* ←表示場所を固定 */
