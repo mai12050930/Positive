@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Signin</title>
+    <title>ログイン</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="../../static/js/style.js"></script>
@@ -16,35 +16,33 @@
 
 
     <p><image src="../game.png" alt="ゲームロゴ" /></p>
-    <h1>Signin</h1>
-    
+    <h1>ようこそ！INIAD-HUMへ！</h1>
+
     <!--ログインフォーム-->
     <form name="login_form" method="post">
             {% csrf_token %}
             <div>
-                <label for="username">username</label>
-                <input type="text" id="username" name="username" />
+                <label for="username">ユーザーID</label>
+                <input type="text" name="username">
             </div>
             <br>
             <div>
-                <label for="password">password</label>
-                <input type="password" id="password" name="password" />
+                <label for="password">パスワード</label>
+                <input type="password" name="password">
             </div>
             <br>
-            <input type="submit" value="login" />
+            <input type="submit" class="btn" value="Login">
 
     </form>
+
+    <!-- 新規登録画面へ -->
+    <p>アカウントをお持ちですか？：
+        <a href="{% url 'accounts' %}">アカウントを作成</a>
+    </p>
 
     <p id="topbutton">
         <a href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">▲TOPへ戻る</a>
      </p>
-
-    
-
-    <!-- 新規登録画面へ -->
-    <a href="{% url 'signup' %}">Signup</a>
-
-    
 </body>
 
 </html>

@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Game</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="../../static/js/style.js"></script>
     
 </head>
@@ -12,12 +13,12 @@
 <body>
     <p><image src="../game.png" alt="ゲームロゴ" /></p>
     
-
+    <h1>{{ UsreID}}さんようこそ！！</h1>
     
     <div>
         ＜ゲーム画面＞
     </div>
-    <p>Help!</p>
+    <button formaction="{% url 'chat' %}">Help!</button>
     <h2>Log</h2>
 </body>
 

@@ -32,16 +32,16 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "game",
-    # "normal_account",
+    "accounts",
     "chat",
-    'accounts.apps.AccountsConfig',
+    # 'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +89,16 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
+"""
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Agron2PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.BCryptPasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+]
+"""
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -108,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
@@ -126,16 +136,29 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 STATIC_URL = '/static/'
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+SITE_ID = 1
 
 #djanngo-allauthの設定
 """
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '' #ログイン後に遷移するurlの指定
-ACCOUNT_LOGOUT_REDIRECT_URL = '' #ログアウト後に遷移するurlの指定
- 
-EMAIL_HOST = 'smtp.gmail.com' #メールサーバの指定
-EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = True
+
+LOGIN_REDIRECT_URL = 'game:game' #ログイン後の遷移先
+LOGOUT_REDIRECT_URL = '/' #ログアウト後の遷移先
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend', #一般ユーザー用
+    'django.contrib.auth.backends.ModelBackend', #管理サイト用
+
+)
+ACCOUNT_EMAIL_REQUIRED = True #Email必須
+ACOCUNT_USERNAME_REQUIRED = True #user名必須
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True #パスワード2回入力
+ACCOUNT_SESSION_REMEMBER = True
+ACCCUNT_AUTHENTICATION_METHOD = 'email' #Emailで認証を行う
+ACCOUNT_UNIQUE_EMAIL = True #一意なメール
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #Email送信
+
+# AUTH_USER_MODEL = 'accounts.CustomUser'
 """
