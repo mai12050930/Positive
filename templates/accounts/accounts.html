@@ -11,14 +11,21 @@
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
+    <p><image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" /></p>
     <h1>新規登録</h1>
 
     {% if AccountCreate %}
         <h1>登録完了！</h1>
-    
+        <script type="text/javascript">
+            setTimeout(function(){
+            window.location.href = "{% url 'login' %}";
+            }, 3*1000);
+        </script>
+        <p>3秒後にジャンプします</p>
+
     {% else %}
     <!-- 新規登録フォーム -->
+    
     <form  name="signup_form" enctype="multipart/form-data" method="post">
     <table class="create_form">
         {% csrf_token %}
@@ -29,6 +36,7 @@
     </table>
     </form>
     {%  endif %}
+        
 </body>
 
 </html>
