@@ -6,14 +6,16 @@
     <title>Game</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="../../static/js/style.js"></script>
+    <script src="{% static 'js/style.js' %}"></script>
     
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
+    <p><image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" /></p>
     
-    <h1>{{ UsreID}}さんようこそ！！</h1>
+    <p>ログアウトは
+    <a href="{% url 'logout' %}">こちら</a>
+    </p>
     
     <div>
         ＜ゲーム画面＞
