@@ -1,26 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Chat</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <script src="../../static/js/style.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/style.js' %}"></script>
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
+    <p><image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" /></p>
    
 
     
 
     <!-- 送信フォーム -->
-    <form name="chat_send" action="post" action="#">
+    <form name="chat_send" onsubmit="return false;" action="">
         <div>
-            <input type="text" name="text" id="text" />
+            Message : 
+            <input type="text" name="text" autocomplete="off" autofocus >
             <input type="submit" value="Send">
         </div>
     </form>
+
+    <ul id="list_message"></ul>
 
 </body>
 
