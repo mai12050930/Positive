@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/style.js' %}"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     <form name="chat_send" onsubmit="return false;" action="">
         <div>
             Message : 
-            <input type="text" name="text" autocomplete="off" autofocus >
+            <input type="text" name="text" id="input_message" autocomplete="off" autofocus >
             <input type="submit" value="Send">
         </div>
     </form>
