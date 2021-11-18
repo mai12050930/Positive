@@ -24,7 +24,7 @@ def Login(request):
                 # ログイン
                 login(request,user)
                 # ホームページ遷移
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('choice'))
             else:
                 # アカウント利用不可
                 return HttpResponse("アカウントが有効ではありません")
@@ -46,7 +46,7 @@ def Logout(request):
 @login_required
 def home(request):
     params = {"UserID":request.user,}
-    return render(request, "game/home.html", context=params)
+    return render(request, "game/choice.html", context=params)
 
 # 新規登録
 class AccountCreate(TemplateView):
