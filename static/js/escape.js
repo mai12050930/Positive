@@ -15,8 +15,8 @@ function draw() {
     var context = canvas.getContext("2d");
 
     context.font = "20px 'Century Gothic'";
-    context.fillText(title,110,100);
-    context.fillText(startbt,250,250);
+    context.fillText(title,225,100);
+    context.fillText(startbt,225,250);
 
     //ボタンのクリック
     canvas.addEventListener("mousedown", mouseDownHandler, false);
@@ -156,7 +156,7 @@ function draw() {
         context.lineTo(25, 215);
         context.closePath();
         /* 三角形を塗りつぶす */
-        context.fillStyle = "#ffffff";
+        context.fillStyle = "#ffff00";
         context.fill();
         
         context.beginPath();
@@ -165,12 +165,12 @@ function draw() {
         context.lineTo(521, 215);
         context.closePath();
         /* 三角形を塗りつぶす */
-        context.fillStyle = "#ffffff";
+        context.fillStyle = "#ffff00";
         context.fill();
     }
     
     function itemBar(){
-        var about = "？";
+        var about = "?";
         context.fillStyle = 'rgba(0, 0, 0, 0.5)';
         context.fillRect(0,0,550,35);
         context.beginPath();
