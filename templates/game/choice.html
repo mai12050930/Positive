@@ -1,17 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Select game</title>
+    <title>X or Y</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <script src="../../static/js/style.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
    
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
-    <h1>Select</h1>
+    <p><image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" /></p>
+    <a href="{% url 'home' %}">ハムスターを探しにいく？</a>
+    <a href="{% url 'match' %}">ハムスターを見つけるのに協力する？</a>
 </body>
 
 </html>
