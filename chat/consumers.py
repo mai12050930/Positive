@@ -31,8 +31,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
         if('join' == text_data_json.get('data_type')):
             #ユーザー名をクラスメンバー変数に設定
             self.strUserName = text_data_json['username']
+            #ルーム名の取得
+            self.strRoomName = text_data_json['roomname']
             #チャットへの参加
-            await self.join_chat()
+            await self.join_chat(self.strRoomName)
         
         #チャットからの離脱処理
         elif('leave' == text_data_json.get('data_type')):
@@ -65,8 +67,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps(data_json))
 
     #チャットへの参加
-    async def join_chat(self):
-        self.strGroupName = 'chat'
+    async def join_chat(self, strRoomName):
+        #グループに参加
+        # self.strGroupName = 'chat'
+        self.strGroupName = 'chat_%s' %strRoomName
         await self.channel_layer.group_add(self.strGroupName, self.channel_name)
 
     #チャットからの離脱

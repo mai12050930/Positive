@@ -1,8 +1,10 @@
 const g_elementDivJoinScreen = document.getElementById("div_join_screen");
 const g_elementDivChatScreen = document.getElementById("div_chat_screen");
 const g_elementInputUserName = document.getElementById("input_username");
+const g_elementInputRoomName = document.getElementById("input_roomname");
 
 const g_elementTextUserName = document.getElementById("text_username");
+const g_elementTextRoomName = document.getElementById("text_roomname");
 
 const g_elementInputMessage = document.getElementById("input_message");
 const g_elementListMessage = document.getElementById("list_message");
@@ -21,8 +23,12 @@ function onsubmitButton_JoinChat(){
     }
     g_elementTextUserName.value = strInputUserName;
 
+    //ルーム名
+    let strInputRoomName = g_elementInputRoomName.value;
+    g_elementTextRoomName.value = strInputRoomName;
+
     //サーバーにjoin送信
-    g_socket.send(JSON.stringify({"data_type":"join", "username": strInputUserName }));
+    g_socket.send(JSON.stringify({"data_type":"join", "username": strInputUserName, "roomname":strInputRoomName}));
 
     //画面の切り替え
     g_elementDivJoinScreen.style.display = "none"; //参加画面の非表示
