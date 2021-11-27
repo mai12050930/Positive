@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "game",
     "accounts",
     "chat",
+    "channels",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +73,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+#Channels
+ASGI_APPLICATION = "config.asgi.application"
+CHANNEL_LAYERS = {
+    'default': {
+    'BACKEND': 'channels_redis.core.RedisChannelLayer',
+    'CONFIG': {'hosts': [('127.0.0.1', 6379)],},
+    },
+}
 
 
 # Database
@@ -139,26 +149,3 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 SITE_ID = 1
-
-#djanngo-allauthの設定
-"""
-SITE_ID = 1
-
-LOGIN_REDIRECT_URL = 'game:game' #ログイン後の遷移先
-LOGOUT_REDIRECT_URL = '/' #ログアウト後の遷移先
-
-AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend', #一般ユーザー用
-    'django.contrib.auth.backends.ModelBackend', #管理サイト用
-
-)
-ACCOUNT_EMAIL_REQUIRED = True #Email必須
-ACOCUNT_USERNAME_REQUIRED = True #user名必須
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True #パスワード2回入力
-ACCOUNT_SESSION_REMEMBER = True
-ACCCUNT_AUTHENTICATION_METHOD = 'email' #Emailで認証を行う
-ACCOUNT_UNIQUE_EMAIL = True #一意なメール
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #Email送信
-
-# AUTH_USER_MODEL = 'accounts.CustomUser'
-"""
