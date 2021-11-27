@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Game</title>
+    <title>Select room</title>
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
@@ -11,16 +11,11 @@
 </head>
 
 <body>
+
     <p><image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" /></p>
-    
-    <p>ログアウトは
-    <a href="{% url 'logout' %}">こちら</a>
-    </p>
-    
-    <div>
-        ＜ゲーム画面＞
-    </div>
-    <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">Help!</a>
+    <h1>掲示板を見て助けにいく部屋を決めよう！</h1>
+    <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">決まった！</a>
+    <h1>掲示板</h1>
 </body>
 
 </html>
