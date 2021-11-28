@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Help Log</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+
+</head>
+
+<body>
+    <p>
+        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
+    </p>
+    <p>助けてもらうために掲示板に書き込もう！</p>
+    <form action="{% url 'create_log' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="ユーザー名を入力">
+        <br>
+        <input type="text" name="roomname" placeholder="ルーム名">
+        <br>
+        <textarea name="comment" placeholder="一言コメントを書こう！"></textarea>
+        <br>
+        <input type="submit" value="送信">
+    </form>
+
+    <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">Help!</a>
+</body>
+
+</html>

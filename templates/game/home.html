@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <p><image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" /></p>
+    <p><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></p>
     
     <p>ログアウトは
     <a href="{% url 'logout' %}">こちら</a>
@@ -20,7 +20,7 @@
     <div>
         ＜ゲーム画面＞
     </div>
-    <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">Help!</a>
+    <a class="button" href="{% url 'create_log' %}" target="_blank" rel="noopener">Help!</a>
 </body>
 
 </html>
