@@ -1,35 +1,53 @@
-<!-- {% load staticfiles %} -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Chat</title>
     <meta charset="utf-8">
-    
-
-    <!--
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
-        デザインのため、いったんコメントアウトしてます。
-    -->
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <script src="../../static/js/style.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
+    <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
-   
+    <p>
+        <image src="{% static 'images/game_logo.jpg' %}" alt="ゲームロゴ" />
+    </p>
 
-    
+    <div id="div_container">
 
-    <!-- 送信フォーム -->
-    <form name="chat_send" action="post" action="#">
-        <!-- {% csrf_token %} -->
-        <div>
-            <input type="text" name="text" id="text" />
-            <input type="submit" value="Send">
+        <div id="div_main">
+            <div id="div_join_screen">
+                <form action="" onsubmit="onsubmitButton_JoinChat(); return false;">
+                    User name<br>
+                    <input type="text" id="input_username" placeholder="Enter User name" autofocus>
+                    Room name<br>
+                    <input type="text" id="input_roomname" placeholder="Enter Room name">
+                    Room nameは英数字でお願いします。
+                    <input type="submit" value="Join Chat">
+                </form>
+            </div>
+
+            <div id="div_chat_screen">
+                <button onclick="onclickButton_LeaveChat()">Leave Chat.</button><br>
+                User name :
+                <input type="text" id="text_username" readonly="readonly"><br>
+                Room name : 
+                <input type="text" id="text_roomname" readonly="readonly">
+                <!-- 送信フォーム -->
+                <form name="chat_send" action="" onsubmit="onsubmitButton_Send(); return false;">
+                    Message :
+                    <input type="text" name="text" id="input_message" autocomplete="off" autofocus />
+                    <input type="submit" value="Send" />
+                </form>
+
+                <ul id="list_message"></ul>
+            </div>
         </div>
-    </form>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
 
 </body>
 

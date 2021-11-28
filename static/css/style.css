@@ -19,6 +19,10 @@ form {
     display: block;
     padding-top: 100px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 602ae205e871ab83022ede742796f8a711622c5c
 #topbutton {
     /* ▼ボタンの表示位置を画面の右下に固定 */
     position: fixed; /* ←表示場所を固定 */
@@ -48,6 +52,7 @@ form {
     /* ▼マウスが載ったときの装飾 */
     color: yellow;              /* ←文字色 */
     text-decoration: underline; /* ←下線あり */
+<<<<<<< HEAD
 } 
 
 #cursor {
@@ -81,3 +86,38 @@ form {
 #stalker.active {
    transform: scale(3);
 } 
+=======
+ } 
+
+ #cursor {
+    position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #039645;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    pointer-events: none;
+}
+
+#cursor.active {
+    transform: scale(0);
+}
+
+#stalker {
+    position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: rgb(121, 216, 187);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transition: 0.2s;
+    opacity: .3;
+    pointer-events: none;
+}
+
+#stalker.active {
+    transform: scale(3);
+}
+>>>>>>> 602ae205e871ab83022ede742796f8a711622c5c
