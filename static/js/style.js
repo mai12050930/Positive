@@ -1,9 +1,5 @@
 var head = document.getElementsByTagName('head')
 var script = document.createElement('script')
-<<<<<<< HEAD
-=======
-
->>>>>>> 602ae205e871ab83022ede742796f8a711622c5c
 script.setAttribute('src', 'https://code.jquery.com/jquery-1.12.4.min.js')
 
 script.setAttribute('type', 'text/javascript')
@@ -58,8 +54,4 @@ $(function() {
 }
 
 })
-<<<<<<< HEAD
 document.head.appendChild(script) 
-=======
-document.head.appendChild(script)
->>>>>>> 602ae205e871ab83022ede742796f8a711622c5c
