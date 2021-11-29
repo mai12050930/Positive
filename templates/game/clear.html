@@ -4,16 +4,24 @@
 <head>
     <title>Clear</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/css/style.css">
     <script src="../../static/js/style.js"></script>
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
-    
+    <div id = "title">
+        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
+        <span>他の人を助けに行こう！</span>
+    </div>
 
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
+        </div>
+    </div>
     
-    <p>他の人を助けに行こう！</p>
 </body>
 
 </html>

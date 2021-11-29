@@ -5,6 +5,7 @@
 <head>
     <title>ログイン</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/style.js' %}"></script>
 
@@ -12,10 +13,10 @@
 </head>
 
 <body>
-    
-    <p><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></p>
-    <h1>ようこそ！INIAD-HUMへ！</h1>
-
+    <div id = "title">
+        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
+        <span>ようこそ！INIAD-HUMへ！</span>
+    </div>
     <!--ログインフォーム-->
     <form name="login_form"  action="{% url 'login' %}" method="post">
         {% csrf_token %}
@@ -38,9 +39,12 @@
         <a href="{% url 'accounts' %}">アカウントを作成</a>
     </p>
 
-    <p id="topbutton">
-        <a href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">▲TOPへ戻る</a>
-     </p>
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
+        </div>
+    </div>
 </body>
 
 </html>

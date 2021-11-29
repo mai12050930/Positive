@@ -5,16 +5,18 @@
 <head>
     <title>Help Log</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 
 </head>
 
 <body>
-    <p>
+    <div id = "title">
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-    </p>
-    <p>助けてもらうために掲示板に書き込もう！</p>
+        <span>助けてもらうために掲示板に書き込もう！</span>
+    </div>
+
     <form action="{% url 'create_log' %}" method="POST">
         {% csrf_token %}
         <input type="text" name="username" placeholder="ユーザー名を入力">
@@ -27,6 +29,13 @@
     </form>
 
     <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">Help!</a>
+
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
+        </div>
+    </div>
 </body>
 
 </html>

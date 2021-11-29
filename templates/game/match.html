@@ -5,6 +5,7 @@
 <head>
     <title>Select room</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
     
@@ -12,8 +13,11 @@
 
 <body>
 
-    <p><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></p>
-    <h1>掲示板を見て助けにいく部屋を決めよう！</h1>
+    <div id = "title">
+        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
+        <span>掲示板を見て助けにいく部屋を決めよう！</span>
+    </div>
+
     <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">決まった！</a>
     <h1>掲示板</h1>
     <table>
@@ -23,6 +27,13 @@
         </tr>
         {% endfor %}
     </table>
+
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
+        </div>
+    </div>
 </body>
 
 </html>

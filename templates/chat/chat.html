@@ -5,15 +5,19 @@
 <head>
     <title>Chat</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+    
 </head>
 
 <body>
-    <p>
+    <div id = "title">
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-    </p>
+        
+    </div>
+
 
     <div id="div_container">
 
@@ -44,6 +48,13 @@
 
                 <ul id="list_message"></ul>
             </div>
+        </div>
+    </div>
+
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
         </div>
     </div>
 

@@ -1,24 +1,55 @@
 body{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
     background-color: rgb(191, 207, 230);
 }
-h1{
-    padding-left: 500px;
-    padding-top: 50px;
+
+/*表示領域が600px以上*/
+@media (min-width: 1000px) {
+    #title {
+        display: flex;
+        align-items: center;
+    }
+    span{
+        margin-left:400px;
+        font-weight: bold;
+        font-size:30px;
+    }
+    div img{
+        display: block;
+        width: 170px;
+        height: auto;
+        border-radius:50px;    
+    }
+ }
+
+/*表示領域が600px未満*/
+@media (max-width: 999px) {
+    #title {
+        display: flex;
+        align-items: center;
+    }
+    span{
+        margin-left:40px;
+        font-weight: bold;
+        font-size:30px;
+    }
+    div img{
+        display: block;
+        width: 170px;
+        height: auto;
+        border-radius:50px;   
+    }
 }
-p{
-    float: left;
-    padding: 6px 0;
-}
-p img{
-    display: block;
-    width: 170px;
-    height: 100px;
-    
-}
+
 form {
     display: block;
     padding-top: 100px;
 }
+
+/*スクロールアクション*/
 #topbutton {
     /* ▼ボタンの表示位置を画面の右下に固定 */
     position: fixed; /* ←表示場所を固定 */
@@ -29,27 +60,41 @@ form {
     /* ▼最初は非表示にしておく */
     display: none;
  
-    /* ▼配色・配置・文字の装飾など */
-    background-color: #2525aa; /* ←背景色 */
-    opacity: 0.75;        /* ←透明度 */
-    border-radius: 24px;  /* ←角丸の半径 */
-    text-align: center;  /* ←文字の位置 */
-    font-size: 120%;     /* ←文字サイズ */
-    font-weight: bold;   /* ←文字の太さ */
     margin: 0px;          /* ←外側の余白 */
     padding: 10px;       /* ←内側の余白 */
  }
- #topbutton a {
-    /* ▼リンクの装飾 */
-    color: white;          /* ←文字色 */
-    text-decoration: none; /* ←下線なし */
- }
- #topbutton a:hover {
-    /* ▼マウスが載ったときの装飾 */
-    color: yellow;              /* ←文字色 */
-    text-decoration: underline; /* ←下線あり */
-} 
 
+
+#topbutton div img.a{
+    padding-top: 3s0px;
+    height: 120px;
+    width: 100px;
+    opacity: 1;
+}
+#topbutton div.img-box img.b{
+    height: 200px;
+    width: 250px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.1s; 
+}
+
+#topbutton div.img-box {
+    position: relative;
+}
+
+#topbutton div.img-box:hover img.a {
+    opacity: 0;
+}
+#topbutton div.img-box:hover img.b {
+    opacity: 1;
+}
+
+
+/*カーソル*/
 #cursor {
    position: fixed;
    -webkit-transform: translate(-50%, -50%);
