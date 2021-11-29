@@ -17,6 +17,8 @@
     <p>助けてもらうために掲示板に書き込もう！</p>
     <form action="{% url 'create_log' %}" method="POST">
         {% csrf_token %}
+        <input type="date" name="time" placeholder="時間">
+        <br>
         <input type="text" name="username" placeholder="ユーザー名を入力">
         <br>
         <input type="text" name="roomname" placeholder="ルーム名">
