@@ -19,7 +19,7 @@
     <table>
         {% for log in logs %}
         <tr>
-            <td>{{ log.username }} {{ log.roomname }} {{log.comment }}</td>
+            <td>{{ log.time }}/ [{{ log.username }}]-{{ log.roomname }} {{log.comment }}</td>
         </tr>
         {% endfor %}
     </table>
