@@ -15,11 +15,11 @@
 
     <div id = "title">
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-        <span>掲示板を見て助けにいく部屋を決めよう！</span>
+        <span class="title">掲示板を見て助けにいく部屋を決めよう！</span>
     </div>
 
     <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">決まった！</a>
-    <h1>掲示板</h1>
+    <h2>掲示板</h2>
     <table>
         {% for log in logs %}
         <tr>

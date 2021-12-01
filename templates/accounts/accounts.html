@@ -6,15 +6,23 @@
     <title>アカウント</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--アイコンインポート-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/xxxxxxxxxx.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <script src="{% static 'js/style.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
 
 </head>
 
 <body>
     <div id = "title">
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-        <span>新規登録</span>
+        <span class="title">新規登録</span>
     </div>
 
     {% if AccountCreate %}
@@ -27,9 +35,23 @@
         <p>3秒後にジャンプします</p>
 
     {% else %}
+
     <!-- 新規登録フォーム -->
     
     <form  name="signup_form" enctype="multipart/form-data" method="post">
+        <table class="create_form">
+            {% csrf_token %}
+            {{ account_form.as_table }}
+            <tr><td></td><td>
+            <input type="submit" formaction="" value="作成">
+            </td></tr>
+        </table>
+        </form>
+
+
+    <!-- 新規登録フォーム -->
+    
+    <form  name="signup_form" enctype="multipart/form-data" method="post" class="login">
     <table class="create_form">
         {% csrf_token %}
         {{ account_form.as_table }}
@@ -38,6 +60,33 @@
         </td></tr>
     </table>
     </form>
+<!--デザインテスト-->
+    <form name="login_form"  action="{% url 'login' %}" method="post" class="login">
+        {% csrf_token %}
+
+        <fieldset>
+        <legend class="legend">ログイン</legend>
+
+        <div class="input">
+            <label for="userid"></label>
+            <input type="text"  name="userid" placeholder="ユーザーID" required  />
+            <span><i class="fas fa-address-card"></i></span>
+        </div>
+        <div class="input">
+            <label for="password"></label>
+            <input type="password" name="password" placeholder="Password" required />
+            <span><i class="fa fa-lock"></i></span>
+          </div>
+          <button type="submit" class="submit" value="Login"><i class="fas fa-arrow-right"></i></button>
+        </fieldset>
+        
+        <div class="feedback">
+            login successful <br />
+            redirecting...
+        </div>
+        </form>
+<!--デザインテスト-->        
+
     {%  endif %}
 
     <div id="topbutton">
