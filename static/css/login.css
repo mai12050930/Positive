@@ -39,13 +39,13 @@
   }
 
 
-  .login {
+  .login_login {
 position: relative;
 top: 40%;
 width: 500px;
 display: table;
 margin: -150px auto 0 auto;
-background: #fff;
+background: rgb(243, 229, 191);
 border-radius: 4px;
 }
 .legend {
