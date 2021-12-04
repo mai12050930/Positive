@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/choice.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
    
 </head>
@@ -16,10 +17,20 @@
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
         
     </div>
-
     
+    <!--元リンク
     <a class="button" href="{% url 'home' %}">ハムスターを探しにいく？</a>
     <a class="button" href="{% url 'match' %}">ハムスターを見つけるのに協力する？</a>
+    -->
+    
+    <!--デザインテスト-->
+    <a class="btn btn-custom01" href="{% url 'home' %}" >
+        <span class="btn-custom01-1" >ハムスターを探しにいく？</span>
+    </a>
+    <a class="btn btn-custom01" href="{% url 'match' %}">
+        <span class="btn-custom01-2" >ハムスターを見つけるのに協力する？</span>
+    </a>
+    
 
     <div id="topbutton">
         <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
