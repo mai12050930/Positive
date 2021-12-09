@@ -4,6 +4,13 @@ body{
     align-items: center;
     cursor: none;
     background-color: rgb(191, 207, 230);
+    background-image: url(../images/back_photo.png);
+    animation: bgiLoop 5s linear infinite;
+}
+
+@keyframes bgiLoop {
+    0% { background-position: 0 0;}
+    100% { background-position: -300px -300px;}
 }
 
 /*表示領域が600px以上*/

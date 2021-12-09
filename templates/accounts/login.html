@@ -10,7 +10,7 @@
     <!--アイコンインポート-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/xxxxxxxxxx.js" crossorigin="anonymous"></script>
+    
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
@@ -26,7 +26,10 @@
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
         <span class="title">ようこそ！INIAD-HUMへ！</span>
     </div>
+
+    
     <!--ログインフォーム-->
+    <!--
     <form name="login_form"  action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <table>
@@ -39,15 +42,17 @@
         </table>
         <input type="submit" class="btn" value="Login">
     </form>
+    -->
 
 
     <!--ログインフォーム-->
-      <form name="login_form"  action="{% url 'login' %}" method="post" class="login">
+    <div class="login_login">
+    <form name="login_form"  action="{% url 'login' %}" method="post" >
         {% csrf_token %}
 
         <fieldset>
         <legend class="legend">ログイン</legend>
-        <table>
+        
         <div class="input">
             <label for="userid"></label>
             <input type="text"  name="userid" placeholder="ユーザーID" required  />
@@ -59,14 +64,11 @@
             <span><i class="fa fa-lock"></i></span>
           </div>
           <button type="submit" class="submit" value="Login"><i class="fas fa-arrow-right"></i></button>
-        </table>
+        
         </fieldset>
         
-        <div class="feedback">
-            login successful <br />
-            redirecting...
-        </div>
         </form>
+    </div>
         
 
     <!-- 新規登録画面へ -->
