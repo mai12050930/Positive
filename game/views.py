@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from game.models import Log
-import datetime
+from django.utils import timezone
 
 
 def choice(request):
@@ -27,7 +27,7 @@ def create_log(request):
             username = request.POST['username'],
             roomname = request.POST['roomname'],
             comment = request.POST['comment'],
-            time = request.POST['time'],
+            time = timezone.datetime.now(),
         )
         return redirect('chat')
     return render(request, 'game/help_log.html')
