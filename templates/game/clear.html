@@ -1,19 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Clear</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <script src="../../static/js/style.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 </head>
 
 <body>
-    <p><image src="../game.png" alt="ゲームロゴ" /></p>
-    
-
-    
-    <p>他の人を助けに行こう！</p>
+    <p><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></p>
+    <p>他の人を助けに行こう!</p>
 </body>
 
 </html>
