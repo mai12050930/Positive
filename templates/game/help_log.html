@@ -11,9 +11,7 @@
 </head>
 
 <body>
-    <p>
-        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-    </p>
+    <p><a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a></p>
     <p>助けてもらうために掲示板に書き込もう！</p>
     <form action="{% url 'create_log' %}" method="POST">
         {% csrf_token %}
