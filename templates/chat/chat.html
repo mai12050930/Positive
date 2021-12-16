@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Chat</title>
+    <title>チャット</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
@@ -11,35 +11,33 @@
 </head>
 
 <body>
-    <p>
-        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-    </p>
+    <p><a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a></p>
 
     <div id="div_container">
 
         <div id="div_main">
             <div id="div_join_screen">
                 <form action="" onsubmit="onsubmitButton_JoinChat(); return false;">
-                    User name<br>
+                    ユーザー名<br>
                     <input type="text" id="input_username" placeholder="Enter User name" autofocus>
-                    Room name<br>
+                    ルーム名<br>
                     <input type="text" id="input_roomname" placeholder="Enter Room name">
-                    Room nameは英数字でお願いします。
-                    <input type="submit" value="Join Chat">
+                    ルーム名は英数字でお願いします。
+                    <input type="submit" value="チャットに参加">
                 </form>
             </div>
 
             <div id="div_chat_screen">
-                <button onclick="onclickButton_LeaveChat()">Leave Chat.</button><br>
-                User name :
+                <button onclick="onclickButton_LeaveChat()">部屋を退出する</button><br>
+                ユーザーID :
                 <input type="text" id="text_username" readonly="readonly"><br>
-                Room name : 
+                ルーム名 : 
                 <input type="text" id="text_roomname" readonly="readonly">
                 <!-- 送信フォーム -->
                 <form name="chat_send" action="" onsubmit="onsubmitButton_Send(); return false;">
-                    Message :
+                    メッセージ :
                     <input type="text" name="text" id="input_message" autocomplete="off" autofocus />
-                    <input type="submit" value="Send" />
+                    <input type="submit" value="送信" />
                 </form>
 
                 <ul id="list_message"></ul>
