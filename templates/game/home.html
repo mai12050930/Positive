@@ -5,13 +5,18 @@
 <head>
     <title>Game</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
     
 </head>
 
 <body>
-    <p><a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a></p>
+    <div id = "title">
+        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
+        
+    </div>
+   
     
     <p>ログアウトは
     <a href="{% url 'logout' %}">こちら</a>
@@ -21,6 +26,13 @@
         ＜ゲーム画面＞
     </div>
     <a class="button" href="{% url 'create_log' %}" target="_blank" rel="noopener">Help!</a>
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
+        </div>
+    </div>
+
 </body>
 
 </html>

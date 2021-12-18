@@ -1,3 +1,24 @@
 #div_chat_screen {
     display: none; /* 初期状態非表示 */
 }
+
+
+@media (min-width: 1000px) {
+    form {
+        margin: 0 auto;
+        padding-left: 500px;
+        padding-top: 200px;
+        
+    }
+ }
+
+
+@media (max-width: 999px) {
+    form {
+        margin: 0 auto;
+        padding-left: 90px;
+        padding-top: 200px;
+        
+    }
+}
+
