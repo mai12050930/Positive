@@ -12,14 +12,23 @@
 
 <body>
 
-    <p><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></p>
+    <p><a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a></p>
     <h1>掲示板を見て助けにいく部屋を決めよう！</h1>
     <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">決まった！</a>
     <h1>掲示板</h1>
     <table>
         {% for log in logs %}
         <tr>
-            <td>{{ log.username }} {{ log.roomname }} {{log.comment }}</td>
+            <td>{{ log.time }}</td>
+        </tr>
+        <tr>
+            <td>ユーザー名:</td><td>{{ log.username }}</td>
+        </tr>
+        <tr>
+            <td>ルーム名:</td><td>{{ log.roomname }}</td>
+        </tr>
+        <tr>
+            <td>コメント:</td><td>{{log.comment }}</td>
         </tr>
         {% endfor %}
     </table>
