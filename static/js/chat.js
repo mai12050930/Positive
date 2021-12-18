@@ -5,6 +5,7 @@ const g_elementInputRoomName = document.getElementById("input_roomname");
 
 const g_elementTextUserName = document.getElementById("text_username");
 const g_elementTextRoomName = document.getElementById("text_roomname");
+const g_elementDeleteRoomName = document.getElementById("delete_roomname");
 
 const g_elementInputMessage = document.getElementById("input_message");
 const g_elementListMessage = document.getElementById("list_message");
@@ -25,6 +26,7 @@ function onsubmitButton_JoinChat(){
 
     //ルーム名
     let strInputRoomName = g_elementInputRoomName.value;
+    // g_elementDeleteRoomName.value = strInputRoomName;
     g_elementTextRoomName.value = strInputRoomName;
 
     //サーバーにjoin送信

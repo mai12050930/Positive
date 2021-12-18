@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from game.models import Log
 from django.utils import timezone
+from django.http import Http404
 
 
 def choice(request):
@@ -31,3 +32,15 @@ def create_log(request):
         )
         return redirect('chat')
     return render(request, 'game/help_log.html')
+
+def delete(request):
+    if request.method == 'POST':
+        # d_roomname = request.POST.get('delete_roomname')
+        try:
+            Log.objects.filter(roomname=d_roomname).delete()
+            # logs = Log.objects.get(roomname=d_roomname)
+        except Log.DoesNotExist:
+            raise Http404("Log does not exist")
+    
+        # logs.delete()
+    return redirect('match')
