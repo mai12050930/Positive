@@ -5,15 +5,35 @@
 <head>
     <title>X or Y</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/choice.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
    
 </head>
 
 <body>
-    <p><a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a></p>
-    <a class="button" href="{% url 'home' %}">ハムスターを探しにいく？</a>
-    <a class="button" href="{% url 'match' %}">ハムスターを見つけるのに協力する？</a>
+    <div id = "title">
+        <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
+        
+    </div>
+    
+    
+    <!--デザインテスト-->
+    <a class="btn btn-custom01" href="{% url 'home' %}" >
+        <span class="btn-custom01-1" >ハムスターを探しにいく？</span>
+    </a>
+    <a class="btn btn-custom01" href="{% url 'match' %}">
+        <span class="btn-custom01-2" >ハムスターを見つけるのに協力する？</span>
+    </a>
+    
+
+    <div id="topbutton">
+        <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
+            <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
+            <image src="{% static 'images/sunflower.png' %}" alt="ひまわり" class = "b"/> 
+        </div>
+    </div>
 </body>
 
 </html>
