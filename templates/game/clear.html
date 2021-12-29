@@ -6,8 +6,9 @@
     <title>Clear</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <script src="../../static/js/style.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/clear.css' %}">
+    <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
 </head>
 
 <body>
@@ -16,8 +17,9 @@
         <span class="title">他の人を助けに行こう！</span>
     </div>
 
-    <a>
-    <image src="{% static 'images/map_japan.png' %}" alt="map" />
+    
+    <a id="map" >
+        <image src="{% static 'images/map_japan.png' %}" alt="map" height="700px" width="750px"  />
     </a>
 
     <div id="topbutton">
