@@ -39,12 +39,14 @@ button.btn {
 
 #choice_btn{
   position: relative;
+  
 }
 /*表示領域が600px以上*/
 @media (min-width: 1000px) {
     .btn,
     a.btn,
     button.btn {
+        position: relative;
         top: 120px;
         left: 25%;
         
@@ -57,6 +59,7 @@ button.btn {
     .btn,
     a.btn,
     button.btn {
+      position: relative;
         top: 120px;
         left: 20%;
         
