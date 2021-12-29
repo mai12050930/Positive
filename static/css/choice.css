@@ -11,6 +11,8 @@ html {
   font-size: 62.5%;
 }
 
+
+
 .btn,
 a.btn,
 button.btn {
@@ -39,7 +41,7 @@ button.btn {
 
 #choice_btn{
   position: relative;
-  
+  padding-bottom: 240px;
 }
 /*表示領域が600px以上*/
 @media (min-width: 1000px) {
@@ -49,7 +51,14 @@ button.btn {
         position: relative;
         top: 120px;
         left: 25vw;
+
         
+        
+    }
+
+    video{
+      position: relative;
+      left: 20vw;
     }
 
  }
@@ -62,7 +71,14 @@ button.btn {
       position: relative;
         top: 120px;
         left: 20vw;
+
         
+        
+    }
+
+    video{
+      position: relative;
+      left: 20vw;
     }
 
     
@@ -144,6 +160,8 @@ a.btn-custom01:hover {
   background: #fff100;
 }
 
+
+
 a.btn-custom01:hover:before {
   -webkit-transform: translate3d(0, 0.5rem, -1rem);
   transform: translate3d(0, 0.5rem, -1rem);
@@ -157,6 +175,8 @@ a.btn-custom01:active {
   transform: translate(0rem, 0.75rem);
 }
 
+
+
 a.btn-custom01:active:before {
   -webkit-transform: translate3d(0, 0, -1rem);
   transform: translate3d(0, 0, -1rem);
@@ -164,3 +184,38 @@ a.btn-custom01:active:before {
   box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
 }
 
+
+
+
+
+
+/*マウスオーバーアクション
+img.c{
+    position: relative;
+    left: 40vw;
+    top: 12vw;
+    margin: 0px;
+    padding:0%;
+    height: 50%;
+    width: 10%;
+    opacity: 0;
+}
+img.d{
+  position: relative;
+  left: 40vw;
+  top: 5vw;
+  margin: 0px;
+  padding:0%;
+  height: 50%;
+  width: 10%;
+  opacity: 0;
+}
+
+a.btn-custom01 span.btn-custom01-1:active a img.c{
+  opacity: 0;
+}
+
+a.btn-custom01 span.btn-custom01-1:active a img.d{
+  opacity: 1;
+}
+*/

@@ -19,21 +19,25 @@
     </div>
     
 
+    <video autoplay src="{% static 'movie/game_movie.mp4' %}" poster="{% static 'images/video.png' %}" controls  width="900" height="550"></video>
+
     <div id="choice_btn">
-    <!--デザインテスト-->
+    <!--デザインテスト
+    <a><image src="{% static 'images/hamu_tem_close.png' %}" alt="口を閉じてるハムスター" class="c" /></a>
+    <a><image src="{% static 'images/hamu_tem_open.png' %}" alt="口を閉じてるハムスター" class="d" /></a>
+    -->
     <a class="btn btn-custom01" href="{% url 'home' %}" >
         <span class="btn-custom01-1" >ハムスターを探しにいく？</span>
     </a>
-    
     <a class="btn btn-custom01" href="{% url 'match' %}">
         <span class="btn-custom01-2" >ハムスターを見つけるのに協力する？</span>
     </a>
-</div>
+    </div>
 
 
-<div class="tem">
-    <imag src="{% static 'images/hamu_tem_close.png' %}" alt="口を閉じてるハムスター" class="c" />
-</div>
+
+   
+
 
     
 
