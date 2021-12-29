@@ -4,7 +4,7 @@
     #address_form{
         position: relative;
         top: 400px;
-        left: 520px;
+        left: 50%;
     }
  }
 
@@ -14,7 +14,7 @@
     #address_form{
         position: relative;
         top: 400px;
-        left: 250px;
+        left: 50%;
     }
 }
 

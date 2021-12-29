@@ -37,13 +37,17 @@ button.btn {
   border-radius: 0.5rem;
 }
 
+#choice_btn{
+  position: relative;
+}
 /*表示領域が600px以上*/
 @media (min-width: 1000px) {
     .btn,
     a.btn,
     button.btn {
-        top: 200px;
-        left: 250px;
+        top: 120px;
+        left: 25%;
+        
     }
 
  }
@@ -53,8 +57,9 @@ button.btn {
     .btn,
     a.btn,
     button.btn {
-        top: 110px;
-        left: 120px;
+        top: 120px;
+        left: 20%;
+        
     }
 
     
