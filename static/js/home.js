@@ -7,7 +7,7 @@ script.addEventListener('load', function() {
 
     //↓利用規約
     
-    $('.title').on('click', function() {//タイトル要素をクリックしたら
+    $('.riyou').on('click', function() {//タイトル要素をクリックしたら
     var findElm = $(this).next(".box");//直後のアコーディオンを行うエリアを取得し
     $(findElm).slideToggle();//アコーディオンの上下動作
       
