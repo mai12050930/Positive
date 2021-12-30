@@ -94,3 +94,4 @@ g_socket.onclose = (event) => {
     //ウェブページを閉じたとき以外のWebSocketクローズは想定外
     console.error("Unexpected : Chat socket closed.");
 };
+
