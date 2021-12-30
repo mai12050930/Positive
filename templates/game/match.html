@@ -7,7 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/match.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
     
 </head>
 
@@ -17,11 +20,26 @@
         <a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a>
         <span class="title">掲示板を見て助けにいく部屋を決めよう！</span>
     </div>
+    <ul class="accordion-area">
+        <li>
+          <section>
+            <h3 class="riyou">利用規約</h3>
+            <div class="box">
+              <p>
+                    <a href="{% static 'images/tam.docx.pdf' %}">クリック</a>
+                </p>
 
-    <a class="button" href="{% url 'chat' %}" target="_blank" rel="noopener">決まった！</a>
-    <h2>掲示板</h2>
-    <table>
+              
+            </div>
+          </section>
+        </li>
+    </ul>
+
+    
+  
+    <table class="box_show">
         {% for log in logs %}
+
         <tr>
             <td>{{ log.time }}</td>
         </tr>
@@ -34,8 +52,15 @@
         <tr>
             <td>コメント:</td><td>{{log.comment }}</td>
         </tr>
+
+    
         {% endfor %}
+    
     </table>
+
+    <a class="btn_help_" href="{% url 'create_log' %}" target="_blank" rel="noopener" >
+        <image src="{% static 'images/button_.png' %}" />
+    </a>
 
     <div id="topbutton">
         <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
