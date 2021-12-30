@@ -7,7 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     
 </head>
 
@@ -18,14 +23,41 @@
     </div>
    
     
-    <p>ログアウトは
-    <a href="{% url 'logout' %}">こちら</a>
-    </p>
-    
     <div>
         ＜ゲーム画面＞
     </div>
-    <a class="button" href="{% url 'create_log' %}" target="_blank" rel="noopener">Help!</a>
+
+    
+        
+    
+        <a id="rog">
+            *ログアウトは<a href="{% url 'logout' %}">こちら</a>
+        </a>
+    <div class="HelpHome">
+        <a class="btn_help" href="{% url 'create_log' %}" target="_blank" rel="noopener" >
+            <image src="{% static 'images/button.png' %}" />
+        </a>
+        <ul class="accordion-area">
+            <li>
+              <section>
+                <h3 class="title">利用規約</h3>
+                <div class="box">
+                  <p>＊利用規約をここに手打ちしてください。</p>
+
+                  <!--利用規約についての引継ぎ
+                   pタグの中の ＊利用規約をここに手打ちしてください。　を消して
+                   考えてくれた利用規約を打ち込んでもらえたらうれしいです！
+                   引継ぎは利用規約を打ち終わったらあとで消しといてください。
+                
+                   なにかあったら金本までお願いします。
+                -->
+                </div>
+              </section>
+            </li>
+        </ul>
+
+    </div>
+    
     <div id="topbutton">
         <div class="img-box"  href="#top" onclick="$('html,body').animate({ scrollTop: 0 }); return false;">
             <image src="{% static 'images/seed.png' %}" alt="種"  class = "a" /> 
