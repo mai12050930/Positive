@@ -9,6 +9,8 @@ const g_elementTextRoomName = document.getElementById("text_roomname");
 const g_elementInputMessage = document.getElementById("input_message");
 const g_elementListMessage = document.getElementById("list_message");
 
+//css
+const get_list__ = document.getElementById("list__");
 
 //WebSocketオブジェクト
 let ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
@@ -33,6 +35,9 @@ function onsubmitButton_JoinChat(){
     //画面の切り替え
     g_elementDivJoinScreen.style.display = "none"; //参加画面の非表示
     g_elementDivChatScreen.style.display = "block"; //チャット画面の表示
+
+    get_list__.style.display="table";
+
 }
 
 //Leave Chatボタンを押すと呼ばれる関数

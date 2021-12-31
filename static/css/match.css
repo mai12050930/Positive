@@ -18,16 +18,26 @@
         box-shadow: 0 0 20px #C5E0B4;
         cursor: pointer;
       }
+
+      .box_show {
+        position: relative;
+        left: 540px;
+        padding: 5em 5em;
+        margin: 2em 0;
+        background: #e6f4ff;
+        color: #5c98d4;
+        font-weight: bold;
+    }
  }
 
 /*表示領域が600px未満*/
 
 @media (max-width: 999px) {
     .btn_help_ {
-        position: relative;
+        position: fixed;
         display: flex;
-        left: 200px;
-        top: 0px;
+        left: 30px;
+        top: 100px;
         align-items: center;
         justify-content: center;
         width: 100px;
@@ -37,6 +47,18 @@
         box-shadow: 0 0 20px #C5E0B4;
         cursor: pointer;
       }
+
+      .box_show {
+        position: relative;
+        top: 30px;
+        left: 20px;
+        padding: 5em 5em;
+        padding-bottom: 240px;
+        margin: 2em 0;
+        background: #e6f4ff;
+        color: #5c98d4;
+        font-weight: bold;
+    }
 }
 
   
@@ -81,15 +103,9 @@
     }
   }
 
-  .box_show {
-    position: relative;
-    left: 600px;
-    padding: 0.5em 0.7em;
-    margin: 2em 0;
-    background: #e6f4ff;
-    color: #5c98d4;
-    font-weight: bold;
-}
+  /*ボタン*/
+
+  
 .box_show:after {
     position: absolute;
     content: '';
@@ -100,7 +116,7 @@
     width: 0;
     height: 0;
 }
-.box_show p {
+.box_show tr {
     margin: 0; 
     padding: 0;
 }

@@ -197,7 +197,62 @@ margin-left: -10px;
     height:calc(100% + 11px);
     border-color:rgb(252, 152, 4);
   }
+
+
   
-#list_message{
-    text-align: right;
+
+/*フォーム*/ 
+#list__{
+  display: none;
+}
+
+
+
+@media (min-width: 1000px) {
+    #list__ {
+      position: relative;
+      left: 540px;
+      padding: 5em 5em;
+      margin: 2em 0;
+      background: #e6f4ff;
+      color: #5c98d4;
+      font-weight: bold;
+  }
+}
+
+/*表示領域が600px未満*/
+
+@media (max-width: 999px) {
+    #list__ {
+      position: relative;
+      top: 30px;
+      left: 150px;
+      padding: 5em 5em;
+      padding-bottom: 240px;
+      margin: 2em 0;
+      background: #e6f4ff;
+      color: #5c98d4;
+      font-weight: bold;
+  }
+}
+
+
+#list__:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #e6f4ff;
+    width: 0;
+    height: 0;
+}
+
+#list__ tr {
+    margin: 0; 
+    padding: 0;
+}
+
+table{
+    text-align: center;
 }
