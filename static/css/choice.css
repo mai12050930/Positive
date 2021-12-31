@@ -71,14 +71,18 @@ button.btn {
       position: relative;
         top: 120px;
         left: 20vw;
-
+        width:"900px";
+        height:"550px";
         
         
     }
 
     video{
       position: relative;
-      left: 20vw;
+      left: 10vw;
+
+      width: 600px;
+      height: 500px;
     }
 
     
