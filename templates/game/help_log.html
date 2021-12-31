@@ -6,16 +6,20 @@
     <title>Help Log</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--アイコンインポート-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
     <link type="text/css" rel="stylesheet" href="{% static 'css/help_log.css' %}">
     <script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
 
 </head>
 
 <body>
     <div id = "title">
         <a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a>
-        <span class="title">助けてもらうために掲示板に書き込もう！</span>
+        <span class="title">掲示板に入力してね！</span>
     </div>
 
 
@@ -26,7 +30,7 @@
 
         <fieldset>
 
-        <legend class="legend">助けて！</legend>
+        <legend class="legend">掲示板</legend>
 
         <div class="input">
             <input type="text" name="username" placeholder="ユーザー名を入力">
