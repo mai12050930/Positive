@@ -100,3 +100,4 @@ g_socket.onclose = (event) => {
     console.error("Unexpected : Chat socket closed.");
 };
 
+
