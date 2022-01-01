@@ -6,6 +6,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
+def terms(reauest):
+    return render(reauest, 'accounts/terms.html')
+
 # ログイン
 def Login(request):
     # Post
