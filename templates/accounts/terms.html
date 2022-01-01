@@ -13,9 +13,10 @@
     
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/terms.css' %}">
+    
     <script src="{% static 'js/style.js' %}"></script>
-    <script src="{% static 'js/login.js' %}"></script>
+    
 
     
 </head>
@@ -24,13 +25,18 @@
     
     <div id = "title">
         <image src="{% static 'images/game.png' %}" alt="ゲームロゴ" />
-        <span class="title">ようこそ！INIAD-HUMへ！</span>
     </div>
 
-    <image src="{% static 'images/terms1.jpg' %}" alt="利用規約１" />
-    <image src="{% static 'images/terms2.jpg' %}" alt="利用規約２" />
+    <div class="kiyaku">
+        <image src="{% static 'images/terms1.jpg' %}" alt="利用規約１" />
+        <image src="{% static 'images/terms2.jpg' %}" alt="利用規約２" />
+    </div>
 
-    <a href="{% url 'login' %}">同意する</a>
+    <div id="agree">
+    <a class="btn03 pushdown" href="{% url 'login' %}">
+        <span>同意する</span>
+    </a>
+    </div>
 </body>
 
 </html>
