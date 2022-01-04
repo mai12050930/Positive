@@ -1,1 +1,1 @@
-web: gunicorn  ncp2021positive.wsgi --log-file -
+web: gunicorn  Positive.wsgi --log-file -
