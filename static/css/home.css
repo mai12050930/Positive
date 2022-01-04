@@ -111,6 +111,11 @@
         box-shadow: 0 0 20px #C5E0B4;
         cursor: pointer;
       }
+
+      .canvas_canvas{
+        position : relative;
+        left: 450px;
+      }
  }
 
 /*表示領域が600px未満*/
@@ -129,6 +134,11 @@
         background-color: #C5E0B4;
         box-shadow: 0 0 20px #C5E0B4;
         cursor: pointer;
+      }
+
+      .canvas_canvas{
+        position : relative;
+        left: 50px;
       }
 }
 
@@ -173,3 +183,4 @@
       opacity: 0;
     }
   }
+

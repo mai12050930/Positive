@@ -89,6 +89,7 @@ function draw(){
 	var key3_low_index = 0;
 	var key4_low_index = 0;
 
+	//bgm
 
 
 	var canvas = document.getElementById("escape");
