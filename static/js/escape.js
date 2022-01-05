@@ -136,7 +136,7 @@ function draw(){
 				if(mouseY > 195 && mouseY < 400) {
 					console.log("This is a door."); //debug
 					if(bossHum_f == 2) {
-						alert("ゲームクリア!");
+						alert("ゲームクリア! 協力者にも伝えてあげよう!");
 						printView();
 					}
 				}
