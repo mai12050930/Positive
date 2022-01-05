@@ -25,6 +25,8 @@ SECRET_KEY = '93h$aa_(@=0vlw^itbuhgv^vb!6k$p@!#n0)-9fd5g#s1_e!ta'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+CLOUD = True
+
 ALLOWED_HOSTS = []
 
 
@@ -46,13 +48,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -144,9 +146,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
