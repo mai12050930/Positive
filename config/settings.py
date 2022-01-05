@@ -148,7 +148,7 @@ USE_TZ = True
 
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
@@ -166,6 +166,6 @@ except ImportError:
 
 if not DEBUG:
     import django_heroku
-    django_heroku.settings(locals())
+    django_heroku.settings(locals(), staticfiles=False)
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
