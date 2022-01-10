@@ -27,7 +27,7 @@ DEBUG = False
 
 CLOUD = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ncp2021positive.herokuapp.com"]
 
 
 # Application definition
