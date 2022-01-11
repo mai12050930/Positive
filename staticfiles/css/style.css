@@ -1,0 +1,142 @@
+body{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+    background-color: rgb(191, 207, 230);
+    background-image: url(../images/back_photo.png);
+    animation: bgiLoop 5s linear infinite;
+}
+
+canvas {
+    margin: 0px auto 0px auto;
+    border: 1px solid #000000;
+}
+
+@keyframes bgiLoop {
+    0% { background-position: 0 0;}
+    100% { background-position: -300px -300px;}
+}
+
+/*表示領域が600px以上*/
+@media (min-width: 1000px) {
+    #title {
+        display: flex;
+        align-items: center;
+    }
+    span.title{
+        margin-left:370px;
+        font-weight: bold;
+        font-size:30px;
+    }
+    div#title img{
+        display: block;
+        width: 170px;
+        height: auto;
+        border-radius:50px;    
+    }
+
+ }
+
+/*表示領域が600px未満*/
+@media (max-width: 999px) {
+    #title {
+        display: flex;
+        align-items: center;
+    }
+    span.title{
+        margin-left:40px;
+        font-weight: bold;
+        font-size:30px;
+    }
+    div#title img{
+        display: block;
+        width: 170px;
+        height: auto;
+        border-radius:50px;   
+    }
+
+    
+}
+
+
+
+
+
+/*スクロールアクション*/
+#topbutton {
+    /* ▼ボタンの表示位置を画面の右下に固定 */
+    position: fixed; /* ←表示場所を固定 */
+    bottom: 18px;   /* ←下端からの距離 */
+    left: 18px;    /* ←右端からの距離 */
+    width: 7em;     /* ←横幅 */
+ 
+    /* ▼最初は非表示にしておく */
+    display: none;
+ 
+    margin: 0px;          /* ←外側の余白 */
+    padding: 10px;       /* ←内側の余白 */
+ }
+
+
+#topbutton div img.a{
+    padding-top: 30px;
+    height: 120px;
+    width: 100px;
+    opacity: 1;
+}
+#topbutton div.img-box img.b{
+    height: 200px;
+    width: 250px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.1s; 
+}
+
+#topbutton div.img-box {
+    position: relative;
+}
+
+#topbutton div.img-box:hover img.a {
+    opacity: 0;
+}
+#topbutton div.img-box:hover img.b {
+    opacity: 1;
+}
+
+
+/*カーソル*/
+#cursor {
+   position: fixed;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   background: #039645;
+   width: 5px;
+   height: 5px;
+   border-radius: 100%;
+   pointer-events: none;
+}
+
+#cursor.active {
+   transform: scale(0);
+}
+
+#stalker {
+   position: fixed;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   background: rgb(121, 216, 187);
+   width: 40px;
+   height: 40px;
+   border-radius: 100%;
+   transition: 0.2s;
+   opacity: .3;
+   pointer-events: none;
+}
+
+#stalker.active {
+   transform: scale(3);
+} 
