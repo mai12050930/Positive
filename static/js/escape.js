@@ -1209,10 +1209,10 @@ function draw(){
 
 	//スイッチの謎解きの判断
 	function ifRiddle1(c1, c2, c3, c4) {
-		if(c1 % 4 == 3) {
-			if(c2 % 4 == 0) {
-				if(c3 % 4 == 2) {
-					if (c4 % 4 == 1) {
+		if(c1 % 4 == 2) {
+			if(c2 % 4 == 1) {
+				if(c3 % 4 == 3) {
+					if (c4 % 4 == 0) {
 						alert("謎その1クリア!");
 						return true;
 					}
