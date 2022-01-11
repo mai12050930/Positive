@@ -100,39 +100,39 @@ CHANNEL_LAYERS = {
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'name',
-#         'USER': 'user',
-#         'PASSWORD': '',
-#         'HOST': 'host',
-#         'PORT': '',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'name',
+        'USER': 'user',
+        'PASSWORD': '',
+        'HOST': 'host',
+        'PORT': '',
+    }
+}
 
-if not CLOUD:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'yourdomaindb',
-            'USER': 'postgres',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
-else:
-    SECURE_SSL_REDIRECT = True
-    django_heroku.settings(locals())
-    DATABASES = {
-        'default': dj_database_url.config(
-            default='postgres://djshfendljncljdfvhl.compute-1.amazonaws.com:5432/dgkjdbcnskrhjvb'
-        )
-    }
-    db_from_env = dj_database_url.config()
-    DATABASES['default'].update(db_from_env)
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# if not CLOUD:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'yourdomaindb',
+#             'USER': 'postgres',
+#             'PASSWORD': '',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#         }
+#     }
+# else:
+#     SECURE_SSL_REDIRECT = True
+#     django_heroku.settings(locals())
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default='postgres://djshfendljncljdfvhl.compute-1.amazonaws.com:5432/dgkjdbcnskrhjvb'
+#         )
+#     }
+#     db_from_env = dj_database_url.config()
+#     DATABASES['default'].update(db_from_env)
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Password validation
@@ -194,7 +194,7 @@ if not DEBUG:
     SECRET_KEY = os.environ['SECRET_KEY']
     django_heroku.settings(locals(), staticfiles=False)
 
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
