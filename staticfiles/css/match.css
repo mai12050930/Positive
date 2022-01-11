@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/*help*/
+
+
+@media (min-width: 1000px) {
+    .btn_help_ {
+        position: fixed;
+        display: flex;
+        left: 650px;
+        top: 80px;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #C5E0B4;
+        box-shadow: 0 0 20px #C5E0B4;
+        cursor: pointer;
+      }
+
+      .box_show {
+        position: relative;
+        left: 540px;
+        padding: 5em 5em;
+        margin: 2em 0;
+        background: #e6f4ff;
+        color: #5c98d4;
+        font-weight: bold;
+    }
+ }
+
+/*表示領域が600px未満*/
+
+@media (max-width: 999px) {
+    .btn_help_ {
+        position: fixed;
+        display: flex;
+        left: 30px;
+        top: 100px;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #C5E0B4;
+        box-shadow: 0 0 20px #C5E0B4;
+        cursor: pointer;
+      }
+
+      .box_show {
+        position: relative;
+        top: 30px;
+        left: 20px;
+        padding: 5em 5em;
+        padding-bottom: 240px;
+        margin: 2em 0;
+        background: #e6f4ff;
+        color: #5c98d4;
+        font-weight: bold;
+    }
+}
+
+  
+  /* ボタンの中のアイコン画像 */
+  .btn_help_ img {
+    width: 100%;
+  }
+  
+  /* ボタンの波紋 */
+  .btn_help_::before, .pulse-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #9afcba;
+    border-radius: 50%;
+    box-sizing: border-box;
+    pointer-events: none;
+    animation: pulsate 2s linear infinite;
+  }
+  
+  .btn_help_::after {
+    animation-delay: 1s;
+  }
+  
+  /* ボタンの波紋が広がっていくアニメーション */
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /*ボタン*/
+
+  
+.box_show:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #e6f4ff;
+    width: 0;
+    height: 0;
+}
+.box_show tr {
+    margin: 0; 
+    padding: 0;
+}
+
+table{
+    text-align: center;
+}

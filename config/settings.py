@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,12 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '93h$aa_(@=0vlw^itbuhgv^vb!6k$p@!#n0)-9fd5g#s1_e!ta'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 CLOUD = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     "accounts",
     "chat",
     "channels",
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,26 +95,50 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'name',
+        'USER': 'user',
+        'PASSWORD': '',
+        'HOST': 'host',
+        'PORT': '',
     }
 }
+
+# if not CLOUD:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'yourdomaindb',
+#             'USER': 'postgres',
+#             'PASSWORD': '',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#         }
+#     }
+# else:
+#     SECURE_SSL_REDIRECT = True
+#     django_heroku.settings(locals())
+#     DATABASES = {
+#         'default': dj_database_url.config(
+#             default='postgres://djshfendljncljdfvhl.compute-1.amazonaws.com:5432/dgkjdbcnskrhjvb'
+#         )
+#     }
+#     db_from_env = dj_database_url.config()
+#     DATABASES['default'].update(db_from_env)
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
-"""
-PASSWORD_HASHERS = [
-    "django.contrib.auth.hashers.Agron2PasswordHasher",
-    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
-    "django.contrib.auth.hashers.BCryptPasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
-]
-"""
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -165,8 +193,11 @@ except ImportError:
     pass
 
 if not DEBUG:
-    import django_heroku
+    # SECRET_KEY = os.environ['SECRET_KEY']
     django_heroku.settings(locals(), staticfiles=False)
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
