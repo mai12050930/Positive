@@ -1212,7 +1212,7 @@ function draw(){
 		if(c1 % 4 == 2) {
 			if(c2 % 4 == 1) {
 				if(c3 % 4 == 3) {
-					if (c4 % 4 == 4) {
+					if (c4 % 4 == 0) {
 						alert("謎その1クリア!");
 						return true;
 					}
