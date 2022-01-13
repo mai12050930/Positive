@@ -21,7 +21,10 @@
     <div id = "title">
         <a href="{% url 'choice' %}"><image src="{% static 'images/game.png' %}" alt="ゲームロゴ" /></a>
     </div>
-   <audio autoplay loop src="{% static 'images/bgm.mp3' %}", alt="ゲームロゴ"></audio>
+    <audio>
+        <source src="{% static 'images/bgm.mp3' %}" type="audio/mp3">
+        <p>（audio要素に非対応なブラウザ向けの表示）</p>
+     </audio>
     
     <div class="canvas_canvas">
         <canvas id="escape" width=550 height="400"></canvas>
