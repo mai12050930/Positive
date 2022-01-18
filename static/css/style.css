@@ -8,6 +8,11 @@ body{
     animation: bgiLoop 5s linear infinite;
 }
 
+canvas {	
+    margin: 0px auto 0px auto;	
+    border: 1px solid #000000;	
+}
+
 @keyframes bgiLoop {
     0% { background-position: 0 0;}
     100% { background-position: -300px -300px;}
@@ -24,7 +29,7 @@ body{
         font-weight: bold;
         font-size:30px;
     }
-    div img{
+    div#title img{
         display: block;
         width: 170px;
         height: auto;
@@ -44,7 +49,7 @@ body{
         font-weight: bold;
         font-size:30px;
     }
-    div img{
+    div#title img{
         display: block;
         width: 170px;
         height: auto;
