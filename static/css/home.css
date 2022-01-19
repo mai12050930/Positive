@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+#canvas_tag {
+  width: 640px;
+  margin: 0 auto;
+
+}
+
 .HelpHome{
     display: inline;
 }
